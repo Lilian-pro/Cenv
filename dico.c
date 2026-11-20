@@ -1,25 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "error.h"
 
 #define MAX_MSG 33
-#define TAILLE_TAB 126
-
-typedef struct error{
-  int retour;
-  char string[TAILLE_TAB];
-}error_t;
 
 typedef struct dico{
   int cle;
   char valeur[MAX_MSG];
   struct dico * suivant;
 }dico_t;
-
-void afficherErreur(error_t * err){
-  printf("retour = %d\n%s\n", err->retour, err->string);
-  return;
-}
 
 error_t trouveIndex(dico_t * d){
   if(d->cle > 0)
