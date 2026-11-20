@@ -3,6 +3,9 @@ error.o : error.c error.h
 dico.o : dico.c
 	gcc -Wall -Wextra -c dico.c
 
+dico : dico.o
+	gcc error.o dico.o -o main 
+
 all: error.o dico.o
 	gcc error.o dico.o -o main
 
